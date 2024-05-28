@@ -105,7 +105,9 @@ public class DatosComun {
                 switch(i){
                     case 0 -> rol = Rol.Alumno;
                     case 1 -> rol = Rol.Maestro;
-                    case 2 -> rol = Rol.Coordinador;
+                    case 2 -> rol = Rol.CoordinadorISC;
+                    case 3 -> rol = Rol.CoordinadorIMAT;
+                    case 4 -> rol = Rol.CoordinadorELC;
                 }
     
                 for(Persona persona : Escuela.usuarios.get(rol)){
