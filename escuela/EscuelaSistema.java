@@ -37,20 +37,13 @@ public class EscuelaSistema {
             case Alumno:
                 MenuDelAlumno();
                 break;
-
             case Maestro:
                 MenuDelMaestro();
                 break;
-
-            case CoordinadorISC:
-                MenuDelCoordinadorISC();
+            case Coordinador:
+                MenuDelCoordinador();
                 break;
-            case CoordinadorIMAT:
-                MenuDelCoordinadorIMAT();
-                break;
-            case CoordinadorELC:
-                MenuDelCoordinadorELC();
-                break;
+            
         }
     }
 
@@ -62,15 +55,8 @@ public class EscuelaSistema {
         MenuAlumno.mostrarMenuAlumno();
     }
     
-    public void MenuDelCoordinadorISC(){
-        MenuCoordinador.mostrarMenuCoordinadorISC();
+    public void MenuDelCoordinador(){
+        MenuCoordinador.mostrarMenuCoordinador();
     }
-    public void MenuDelCoordinadorIMAT(){
-        MenuCoordinador.mostrarMenuCoordinadorIMAT();
-    }
-    public void MenuDelCoordinadorELC(){
-        MenuCoordinador.mostrarMenuCoordinadorELC();
-    }
-
 
 }

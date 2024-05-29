@@ -2,27 +2,38 @@ package escuela.menus;
 
 import java.util.Scanner;
 
+import usuario.Coordinador;
+import usuario.utils.UsuarioEnSesion;
+
 public class MenuCoordinador {
     
 
     private static Scanner leerNum = new Scanner(System.in);
 
+    public static void elegirMenuCoordinador(){
+        Coordinador coordinador = (Coordinador) UsuarioEnSesion.getInstancia().getUsuarioActual();
+        switch (coordinador.getCarreraEnum()) {
+            case ISC -> 
+        }
+    }
 
-    public static void mostrarMenuCoordinadorISC(){
+
+
+    public static void mostrarMenuCoordinador(){
         int opcion = 0;
 
         do{
-            System.out.println("+-----------------------------+");
-            System.out.println("|   MENU COORDINADOR ISC MINDBOX  |");
-            System.out.println("+-----------------------------+");
-            System.out.println("|     OPCION | DESCRIPCION    |");
-            System.out.println("+-----------------------------+");
-            System.out.println("|     1      | Registrar      |");
-            System.out.println("|     2      | Modificar      |");
-            System.out.println("|     3      | Consultar      |");
-            System.out.println("|     4      | Eliminar       |");
-            System.out.println("|     5      | Cerrar sesión  |");
-            System.out.println("+-----------------------------+");
+            System.out.println("+---------------------------------+");
+            System.out.println("|   MENÚ COORDINADOR ISC MINDBOX  |");
+            System.out.println("+---------------------------------+");
+            System.out.println("|   OPCIÓN   |    DESCRIPCION     |");
+            System.out.println("+---------------------------------+");
+            System.out.println("|     1      | Registrar          |");
+            System.out.println("|     2      | Modificar          |");
+            System.out.println("|     3      | Consultar          |");
+            System.out.println("|     4      | Eliminar           |");
+            System.out.println("|     5      | Cerrar sesión      |");
+            System.out.println("+---------------------------------+");
             System.out.print("Elige una opción: ");
             opcion = leerNum.nextInt();
 
@@ -35,7 +46,8 @@ public class MenuCoordinador {
                     System.out.println("+-------------------------+");
                     System.out.println("|   1    | Alumnos        |");
                     System.out.println("|   2    | Maestro        |");
-                    System.out.println("|   3    | Regresar       |");
+                    System.out.println("|   3    | Calificaciones |");
+                    System.out.println("|   4    | Regresar       |");
                     System.out.println("+------------------------+");
                     System.out.print("Elige una opción: ");
                     int opcionRegistrar = leerNum.nextInt();
@@ -50,6 +62,10 @@ public class MenuCoordinador {
                             break;
 
                         case 3:
+                            System.out.println("met agregar una calificacion");
+                            break;
+
+                        case 4:
                             break;
                         
                         default:
@@ -66,7 +82,8 @@ public class MenuCoordinador {
                     System.out.println("+-------------------------+");
                     System.out.println("|   1    | Alumnos        |");
                     System.out.println("|   2    | Maestros       |");
-                    System.out.println("|   3    | Regresar       |");
+                    System.out.println("|   3    | Calificaciones |");
+                    System.out.println("|   4    | Regresar       |");
                     System.out.println("+------------------------+");
                     System.out.print("Elige una opción: ");
                     int opcionModificar = leerNum.nextInt();
@@ -81,6 +98,10 @@ public class MenuCoordinador {
                             break;
 
                         case 3:
+                            System.out.println("met modificar calificaciones");
+                            break;
+
+                        case 4:
                             break;
                         default:
                             System.out.println("Opción no válida.");
@@ -209,7 +230,8 @@ public class MenuCoordinador {
                     System.out.println("+----------------------------+");
                     System.out.println("|     1    | Alumnos         |");
                     System.out.println("|     2    | Maestros        |");
-                    System.out.println("|     3    | Regresar        |");
+                    System.out.println("|     3    | Calificaciones  |");
+                    System.out.println("|     4    | Regresar        |");
                     System.out.println("+----------------------------+");
                     System.out.print("Elige una opción: ");
                     int opcionEliminar = leerNum.nextInt();
@@ -224,6 +246,10 @@ public class MenuCoordinador {
                             break;
 
                         case 3:
+                            System.out.println("met para borrar calificaciones");
+                            break;
+
+                        case 4:
                             break;
                             
                         default:
@@ -237,65 +263,5 @@ public class MenuCoordinador {
             }
 
         }while(true);
-    }
-
-    public static void mostrarMenuCoordinadorIMAT(){
-        int opcion = 0;
-
-        do{
-            System.out.println("+-----------------------------+");
-            System.out.println("|   MENU COORDINADOR IMAT MINDBOX  |");
-            System.out.println("+-----------------------------+");
-            System.out.println("|     OPCION | DESCRIPCION    |");
-            System.out.println("+-----------------------------+");
-            System.out.println("|     1      | Registrar      |");
-            System.out.println("|     2      | Modificar      |");
-            System.out.println("|     3      | Consultar      |");
-            System.out.println("|     4      | Eliminar       |");
-            System.out.println("|     5      | Cerrar sesión  |");
-            System.out.println("+-----------------------------+");
-            System.out.print("Elige una opción: ");
-            opcion = leerNum.nextInt();
-
-            switch (opcion) {
-                case 1:
-                    
-                    break;
-            
-                default:
-                    break;
-            }
-
-        }while(true);
-    }
-
-    public static void mostrarMenuCoordinadorELC(){
-        int opcion = 0;
-
-        do{
-            System.out.println("+-----------------------------+");
-            System.out.println("|   MENU COORDINADOR ELC MINDBOX  |");
-            System.out.println("+-----------------------------+");
-            System.out.println("|     OPCION | DESCRIPCION    |");
-            System.out.println("+-----------------------------+");
-            System.out.println("|     1      | Registrar      |");
-            System.out.println("|     2      | Modificar      |");
-            System.out.println("|     3      | Consultar      |");
-            System.out.println("|     4      | Eliminar       |");
-            System.out.println("|     5      | Cerrar sesión  |");
-            System.out.println("+-----------------------------+");
-            System.out.print("Elige una opción: ");
-            opcion = leerNum.nextInt();
-
-            switch (opcion) {
-                case 1:
-                    
-                    break;
-            
-                default:
-                    break;
-            }
-
-        }while(true);
-    }
+    } 
 }

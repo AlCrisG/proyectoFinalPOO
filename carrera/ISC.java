@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import usuario.Coordinador;
 
-public class ISC {
+public class ISC extends Carrera{
     private int id;
     private String nomCarrera;
     private int cantGrupos;

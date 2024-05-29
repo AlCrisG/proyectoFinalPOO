@@ -9,26 +9,11 @@ import usuario.utils.Rol;
 public class Persona {
     private String nombre, primerApellido, segundoApellido, ciudad, rfc, curp, direccion, nombreUsuario,contra;
     private Genero genero;
-    private LocalDate fechaNacimiento;
+    private LocalDate fechaNacimiento, fechaRegistro;
     private Estado estado;
     private Rol rol;
     private int id;
-    private static int ID_USUARIO= 0;
-    
-    
-    
-    public Persona(String nombre, String primerApellido, String segundoApellido, String nombreUsuario, String contra, Rol rol) {
-        this.nombre = nombre;
-        this.primerApellido = primerApellido;
-        this.segundoApellido = segundoApellido;
-        this.nombreUsuario = nombreUsuario;
-        this.contra = contra;
-        this.rol = rol;
-        this.id = ID_USUARIO;
-        ID_USUARIO++;
-
-
-    }
+    private static int ID_USUARIO= 1;
 
     public Persona(String nombre, String primerApellido, String segundoApellido, String fecha, String genero, String ciudad, String estado, String direccion,String nombreUsuario, String contra, Rol rol){
         this.nombre = nombre;
@@ -43,7 +28,9 @@ public class Persona {
         this.nombreUsuario = nombreUsuario;
         this.contra = contra;
         curp = Curp.crearCurp(nombre, primerApellido, segundoApellido, this.genero, fechaNacimiento, this.estado);
+        this.id = ID_USUARIO;
         ID_USUARIO++;
+        this.fechaRegistro = LocalDate.now();
     }
     
      public Rol getRol() {
@@ -134,6 +121,9 @@ public class Persona {
         this.estado = estado;
     }
 
+    public LocalDate getFechaRegistro(){
+        return fechaRegistro;
+    }
 
     private Estado obtenerEstado(int option){
         Estado estado = null;
